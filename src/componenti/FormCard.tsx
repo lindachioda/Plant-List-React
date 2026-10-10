@@ -22,7 +22,10 @@ function FormCard({ addPlant }: FormCardProps){
         setFormData ({...formData, [name]:inputValue})
     }
 
-    const handleSubmit = ()=> {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>)=> {
+    //prevent default!!!!
+        e.preventDefault()
+
         const plant = {
             id: Math.random(),
             name: formData.name,
